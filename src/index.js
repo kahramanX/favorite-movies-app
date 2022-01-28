@@ -8,6 +8,7 @@ import Header from "./Layouts/Header";
 
 // SASS
 import "../src/Assets/Styles/index.scss";
+import "../src/Assets/Styles/reset.scss";
 
 ReactDOM.render(
   <>

@@ -1,3 +1,59 @@
 header {
   color: red;
+  padding: 10px;
+  background-color: #232f3e;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .logo-container {
+    width: 150px;
+    img {
+      width: inherit;
+    }
+  }
+
+  .header-right-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .user-btn {
+      width: 40px;
+      height: 40px;
+      border: 1px solid rgb(242 244 246 / 70%);
+      border-radius: 50%;
+      position: relative;
+
+      &:hover {
+        border: 1px solid white;
+      }
+
+      i {
+        position: absolute;
+        top: 50%;
+        right: 50%;
+        transform: translate(50%, -50%);
+      }
+    }
+
+    div {
+      a {
+        font-size: 1.3em;
+        color: rgb(242 244 246 / 70%);
+
+        &:hover {
+          color: white;
+        }
+      }
+
+      &:hover {
+        border-bottom: 1px solid white;
+      }
+
+      &:not(:first-child) {
+        margin-left: 50px;
+      }
+    }
+  }
 }
