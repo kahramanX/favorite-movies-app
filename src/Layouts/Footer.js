@@ -1,5 +1,5 @@
 // SASS
-import "../style/footer.scss";
+import "../Assets/Styles/footer.scss";
 
 function Footer() {
   return <footer>FOOTER</footer>;

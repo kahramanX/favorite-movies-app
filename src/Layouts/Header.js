@@ -1,5 +1,5 @@
 // SASS
-import "../style/header.scss";
+import "../Assets/Styles/header.scss";
 
 function Header() {
   return <header>HEADER</header>;
