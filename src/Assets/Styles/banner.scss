@@ -1,0 +1,25 @@
+.banner-container {
+  position: relative;
+  background: rgb(35, 47, 62);
+  background: linear-gradient(
+    133deg,
+    rgba(35, 47, 62, 1) 62%,
+    rgba(182, 182, 182, 1) 100%
+  );
+
+  img {
+    width: 100vw;
+    height: 60vh;
+    opacity: 0.2;
+    object-fit: cover;
+  }
+
+  span {
+    font-size: 3em;
+    font-weight: 400;
+    position: absolute;
+    top: 70px;
+    left: 100px;
+    color: white;
+  }
+}
