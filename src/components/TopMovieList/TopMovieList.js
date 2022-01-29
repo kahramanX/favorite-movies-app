@@ -2,7 +2,12 @@ import React, { useEffect, useRef, useState } from "react";
 import { Suspense } from "react/cjs/react.production.min";
 
 // Components
-const MovieCard = React.lazy(() => import("./MovieCard.js"));
+const MovieCard = React.lazy(() => {
+  // lazy loading için süre ekleniyor
+  return new Promise((resolve) => {
+    setTimeout(() => resolve(import("./MovieCard.js")), 2000);
+  });
+});
 
 function TopMovieList() {
   const [topMovies, setTopMovies] = useState([]);
@@ -48,7 +53,11 @@ function TopMovieList() {
       <div className="section-title">
         <h2>Popüler Filmler</h2>
       </div>
-      <Suspense fallback={<h1 style={{ color: "white" }}>Yükleniyor...</h1>}>
+      <Suspense
+        fallback={
+          <i style={{ color: "white" }} className="fas fa-spinner fa-spin"></i>
+        }
+      >
         <div ref={scrollBarRef} className="movie-list">
           <button onClick={leftScroll} className="scroll-left-btn">
             <i className="fas fa-chevron-left"></i>
