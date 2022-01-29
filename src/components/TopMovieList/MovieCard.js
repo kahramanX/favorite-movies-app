@@ -1,8 +1,13 @@
 function MovieCard({ inMovie, addToWatchList }) {
+  function getMovieIDForSeeInfos(pieceOfMovie) {
+    console.log(pieceOfMovie);
+  }
+
   return (
-    <div className="movie-card">
+    <div data-aos="fade-left" className="movie-card">
       <div className="card-image">
         <img
+          loading="lazy"
           src={`https://image.tmdb.org/t/p/original/${inMovie.poster_path}`}
           alt="movie banner"
         />
@@ -13,7 +18,10 @@ function MovieCard({ inMovie, addToWatchList }) {
           <span>{inMovie.vote_average}</span>
         </div>
 
-        <button className="info-btn">
+        <button
+          onClick={() => getMovieIDForSeeInfos(inMovie)}
+          className="info-btn"
+        >
           <i className="fas fa-info-circle"></i>
         </button>
       </div>

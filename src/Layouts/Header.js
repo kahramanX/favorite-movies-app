@@ -32,9 +32,9 @@ function Header() {
           </div>
         </div>
         <Switch>
-          <Route path="/about"></Route>
-          <Route path="/users"></Route>
-          <Route path="/"></Route>
+          <Route path="/" exact></Route>
+          <Route path="/watchlist"></Route>
+          <Route path="/user"></Route>
         </Switch>
       </header>
     </Router>

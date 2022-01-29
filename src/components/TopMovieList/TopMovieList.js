@@ -5,7 +5,7 @@ import { Suspense } from "react/cjs/react.production.min";
 const MovieCard = React.lazy(() => {
   // lazy loading için süre ekleniyor
   return new Promise((resolve) => {
-    setTimeout(() => resolve(import("./MovieCard.js")), 2000);
+    setTimeout(() => resolve(import("./MovieCard.js")), 1500);
   });
 });
 
@@ -42,10 +42,12 @@ function TopMovieList() {
 
   function rightScroll() {
     scrollBarRef.current.scrollLeft += 650;
+    console.log(scrollBarRef.current.scrollLeft);
   }
 
   function leftScroll() {
     scrollBarRef.current.scrollLeft -= 650;
+    console.log(scrollBarRef.current.scrollLeft);
   }
 
   return (

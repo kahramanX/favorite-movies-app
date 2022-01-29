@@ -1,17 +1,17 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Suspense } from "react/cjs/react.production.min";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 // Components
 const MovieCard = React.lazy(() => {
   // lazy loading için süre ekleniyor
   return new Promise((resolve) => {
-    setTimeout(() => resolve(import("../TopMovieList/MovieCard")), 2000);
+    setTimeout(() => resolve(import("../TopMovieList/MovieCard")), 1500);
   });
 });
 
 function UpComingMovieList() {
   const [UpComing, setUpComing] = useState([]);
-  //   const [topMovies, setTopMovies] = useState([]);
 
   const scrollBarRef = useRef(0);
 
@@ -21,10 +21,13 @@ function UpComingMovieList() {
     )
       .then((res) => res.json())
       .then((res) => setUpComing(res.results));
+
+    // data-aos animation init
+    AOS.init();
   }, []);
 
   function addToWatchList(event, test) {
-    console.log(test.title);
+    console.log(test);
     successInfo(event.target);
   }
   function successInfo(event) {
