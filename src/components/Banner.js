@@ -1,9 +1,9 @@
-function Banner(params) {
+function Banner() {
   return (
     <div className="banner-container">
-      <img src={require("../Assets/Images/banner.jpg")} />
+      <img src={require("../Assets/Images/banner.jpg")} alt="Banner" />
       <span>
-        Sevdiğin filmlerini listene ekle, <br />
+        Sevdiğin filmleri listene ekle, <br />
         arkadaşlarınla paylaş
       </span>
     </div>

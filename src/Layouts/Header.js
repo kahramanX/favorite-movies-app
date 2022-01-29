@@ -14,16 +14,16 @@ function Header() {
 
       <div className="header-right-section">
         <div className="search-btn">
-          <a href="#">Search</a>
+          <a href="#">Film Ara</a>
         </div>
 
         <div className="favorites-btn">
-          <a href="#">Favorites</a>
+          <a href="#">İzleme Listesi</a>
         </div>
 
         <div className="user-btn">
           <a href="#">
-            <i class="fas fa-user"></i>
+            <i className="fas fa-user"></i>
           </a>
         </div>
       </div>
