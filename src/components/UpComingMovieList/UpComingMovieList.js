@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Suspense } from "react/cjs/react.production.min";
+import { BrowserRouter as Router, Link } from "react-router-dom";
+
 import AOS from "aos";
 import "aos/dist/aos.css";
 // Components
@@ -54,9 +56,17 @@ function UpComingMovieList() {
 
   return (
     <section className="top-movie-list-container">
-      <div className="section-title">
-        <h2>Yakında Gelecek</h2>
-      </div>
+      <Router>
+        <Link to="/coming-soon">
+          <div className="section-title">
+            <h2>Yakında Gelecek</h2>
+            <div>
+              <i class="fas fa-chevron-right"></i>
+            </div>
+          </div>
+        </Link>
+      </Router>
+
       <Suspense
         fallback={
           <i style={{ color: "white" }} className="fas fa-spinner fa-spin"></i>

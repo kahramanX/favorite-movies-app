@@ -6,12 +6,29 @@
   position: relative;
 
   .section-title {
+    width: 280px;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     margin: 10px 0 10px -40px;
     border-left: 6px solid rgb(0, 168, 225);
+
+    &:hover > h2,
+    &:hover > div {
+      cursor: pointer;
+      color: white;
+    }
 
     h2 {
       margin-left: 20px;
       color: rgb(0, 168, 225);
+    }
+
+    div {
+      font-size: 2em;
+      color: rgb(0, 168, 225);
+      font-weight: 900;
     }
   }
 

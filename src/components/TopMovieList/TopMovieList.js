@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 import { Suspense } from "react/cjs/react.production.min";
 
 // Components
@@ -52,9 +53,17 @@ function TopMovieList() {
 
   return (
     <section className="top-movie-list-container">
-      <div className="section-title">
-        <h2>Popüler Filmler</h2>
-      </div>
+      <Router>
+        <Link to="/popular-movie">
+          <div className="section-title">
+            <h2>Popüler Filmler</h2>
+            <div>
+              <i class="fas fa-chevron-right"></i>
+            </div>
+          </div>
+        </Link>
+      </Router>
+
       <Suspense
         fallback={
           <i style={{ color: "white" }} className="fas fa-spinner fa-spin"></i>
