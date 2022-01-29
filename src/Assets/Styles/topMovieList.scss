@@ -65,6 +65,10 @@
     scroll-behavior: smooth;
 
     .movie-card {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: space-between;
       cursor: pointer;
       min-width: 200px;
       min-height: 470px;

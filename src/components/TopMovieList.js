@@ -4,6 +4,7 @@ function TopMovieList() {
   const [topMovies, setTopMovies] = useState([]);
 
   const scrollBarRef = useRef(0);
+  const watchListBtn = useRef();
 
   useEffect(() => {
     fetch(
@@ -13,8 +14,22 @@ function TopMovieList() {
       .then((res) => setTopMovies(res.results));
   }, []);
 
-  function addToWatchList(test) {
+  function addToWatchList(event, test) {
     console.log(test.title);
+    successInfo(event.target);
+  }
+  function successInfo(event) {
+    event.innerHTML = "<i class='fas fa-plus'></i> Listeme Ekle";
+    event.innerHTML = "<i class='fas fa-check-square'></i> Eklendi";
+    event.style.color = "#2ee65a";
+    event.style.border = "1px solid #2ee65a";
+
+    setTimeout(() => {
+      event.style.backgroundColor = "rgba(0, 169, 225, 0.192)";
+      event.innerHTML = "<i class='fas fa-plus'></i> Listeme Ekle";
+      event.style.color = "rgb(0, 168, 225)";
+      event.style.border = "none";
+    }, 1600);
   }
 
   function rightScroll() {
@@ -58,7 +73,9 @@ function TopMovieList() {
 
               <div className="card-buttons">
                 <button
-                  onClick={() => addToWatchList(inMovie)}
+                  /* daha sonra kullanılacak */
+                  ref={watchListBtn}
+                  onClick={(e) => addToWatchList(e, inMovie)}
                   className="watchlist-btn"
                 >
                   <i className="fas fa-plus"></i>
