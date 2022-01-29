@@ -1,12 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import { Suspense } from "react/cjs/react.production.min";
+import ContentLoader from "react-content-loader";
 
 // Components
 const MovieCard = React.lazy(() => {
   // lazy loading için süre ekleniyor
   return new Promise((resolve) => {
-    setTimeout(() => resolve(import("./MovieCard.js")), 1500);
+    setTimeout(() => resolve(import("../MovieCard.js")), 500);
   });
 });
 
@@ -27,6 +28,7 @@ function TopMovieList() {
     console.log(test.title);
     successInfo(event.target);
   }
+
   function successInfo(event) {
     event.innerHTML = "<i class='fas fa-plus'></i> Listeme Ekle";
     event.innerHTML = "<i class='fas fa-check-square'></i> Eklendi";
@@ -51,6 +53,20 @@ function TopMovieList() {
     console.log(scrollBarRef.current.scrollLeft);
   }
 
+  const MovieListLoader = () => {
+    return (
+      <ContentLoader
+        speed={1}
+        width={"100%"}
+        height={"400px"}
+        backgroundColor="#232F3E"
+        foregroundColor="rgb(57,69,86)"
+      >
+        <rect x="0" y="0" rx="5" ry="5" width="100%" height="100%" />
+      </ContentLoader>
+    );
+  };
+
   return (
     <section className="top-movie-list-container">
       <Router>
@@ -58,17 +74,13 @@ function TopMovieList() {
           <div className="section-title">
             <h2>Popüler Filmler</h2>
             <div>
-              <i class="fas fa-chevron-right"></i>
+              <i className="fas fa-chevron-right"></i>
             </div>
           </div>
         </Link>
       </Router>
 
-      <Suspense
-        fallback={
-          <i style={{ color: "white" }} className="fas fa-spinner fa-spin"></i>
-        }
-      >
+      <Suspense fallback={<MovieListLoader />}>
         <div ref={scrollBarRef} className="movie-list">
           <button onClick={leftScroll} className="scroll-left-btn">
             <i className="fas fa-chevron-left"></i>
