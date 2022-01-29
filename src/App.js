@@ -1,6 +1,6 @@
 // Components
 import Banner from "../src/components/Banner.js";
-import TopMovieList from "../src/components/TopMovieList.js";
+import TopMovieList from "../src/components/TopMovieList/TopMovieList.js";
 
 // SASS
 import "../src/Assets/Styles/banner.scss";
