@@ -1,33 +1,43 @@
 // SASS
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "../Assets/Styles/header.scss";
 
 function Header() {
   return (
-    <header>
-      <div className="logo-container">
-        <img
-          /* use require for import image */
-          src={require("../Assets/Images/favorites-logo.png")}
-          alt="Favorites Logo"
-        />
-      </div>
-
-      <div className="header-right-section">
-        <div className="search-btn">
-          <a href="#">Film Ara</a>
+    <Router>
+      <header>
+        <div className="logo-container">
+          <Link to="/">
+            <img
+              /* use require for import image */
+              src={require("../Assets/Images/favorites-logo.png")}
+              alt="Favorites Logo"
+            />
+          </Link>
         </div>
 
-        <div className="favorites-btn">
-          <a href="#">İzleme Listesi</a>
-        </div>
+        <div className="header-right-section">
+          <div className="search-btn">
+            <Link to="/search">Film Ara</Link>
+          </div>
 
-        <div className="user-btn">
-          <a href="#">
-            <i className="fas fa-user"></i>
-          </a>
+          <div className="favorites-btn">
+            <Link to="watchlist">İzleme Listesi</Link>
+          </div>
+
+          <div className="user-btn">
+            <Link to="/user">
+              <i className="fas fa-user"></i>
+            </Link>
+          </div>
         </div>
-      </div>
-    </header>
+        <Switch>
+          <Route path="/about"></Route>
+          <Route path="/users"></Route>
+          <Route path="/"></Route>
+        </Switch>
+      </header>
+    </Router>
   );
 }
 
