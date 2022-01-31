@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import { Suspense } from "react/cjs/react.production.min";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import ContentLoader from "react-content-loader";
-
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -10,18 +9,18 @@ import "aos/dist/aos.css";
 const MovieCard = React.lazy(() => {
   // lazy loading için süre ekleniyor
   return new Promise((resolve) => {
-    setTimeout(() => resolve(import("../MovieCard")), 500);
+    setTimeout(() => resolve(import("../../MovieCard")), 500);
   });
 });
 
-function UpComingMovieList() {
+function TopRatedMovieList() {
   const [UpComing, setUpComing] = useState([]);
 
   const scrollBarRef = useRef(0);
 
   useEffect(() => {
     fetch(
-      "https://api.themoviedb.org/3/movie/upcoming?api_key=9f2d1368e54e609b6d793560018b878a&language=en-US&page=1"
+      "https://api.themoviedb.org/3/movie/top_rated?api_key=9f2d1368e54e609b6d793560018b878a&language=en-US&page=1"
     )
       .then((res) => res.json())
       .then((res) => setUpComing(res.results));
@@ -75,7 +74,7 @@ function UpComingMovieList() {
       <Router>
         <Link to="/coming-soon">
           <div className="section-title">
-            <h2>Yakında Gelecek</h2>
+            <h2>En Çok Sevilen</h2>
             <div>
               <i className="fas fa-chevron-right"></i>
             </div>
@@ -107,4 +106,4 @@ function UpComingMovieList() {
   );
 }
 
-export default UpComingMovieList;
+export default TopRatedMovieList;
