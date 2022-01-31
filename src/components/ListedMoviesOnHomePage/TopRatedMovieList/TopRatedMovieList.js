@@ -72,7 +72,7 @@ function TopRatedMovieList() {
   return (
     <section className="top-movie-list-container">
       <Router>
-        <Link to="/coming-soon">
+        <Link to="/top-rated">
           <div className="section-title">
             <h2>En Çok Sevilen</h2>
             <div>
