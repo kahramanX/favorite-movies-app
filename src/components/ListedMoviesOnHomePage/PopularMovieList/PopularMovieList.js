@@ -2,8 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import { Suspense } from "react/cjs/react.production.min";
 import ContentLoader from "react-content-loader";
-import MoviePage from "../../MoviePage/MoviePage";
-import { Redirect, Route } from "react-router-dom/cjs/react-router-dom.min";
 
 // Components
 const MovieCard = React.lazy(() => {

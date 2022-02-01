@@ -13,20 +13,20 @@ import "../src/Assets/Styles/reset.scss";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 ReactDOM.render(
-  <>
-    <Router>
-      <Switch>
-        <Route exact path={"/"}>
-          <Header />
-          <App />
-        </Route>
-        <Route strict path={"/movie"}>
-          <Header />
-          <MoviePage />
-        </Route>
-      </Switch>
-      <Footer />
-    </Router>
-  </>,
+  <Router>
+    <Header />
+    <Switch>
+      <Route exact path={"/"}>
+        <App />
+      </Route>
+      <Route strict path={"/movie"}>
+        <MoviePage />
+      </Route>
+      <Route path="/watchlist"></Route>
+      <Route path="/user"></Route>
+      <Route path="/filter"></Route>
+    </Switch>
+    <Footer />
+  </Router>,
   document.getElementById("root")
 );
