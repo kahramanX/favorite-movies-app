@@ -6,7 +6,7 @@ function Footer() {
   return (
     <Router>
       <footer>
-        <div className="ft-direction-container">
+        <div data-aos="fade-right" className="ft-direction-container">
           <span>
             Burası sıkıcı mı? 🤔 <br /> filtreleme özelliğini kullan 👌
           </span>

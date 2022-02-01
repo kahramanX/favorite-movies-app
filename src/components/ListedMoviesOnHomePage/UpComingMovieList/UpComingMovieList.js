@@ -2,8 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import { Suspense } from "react/cjs/react.production.min";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import ContentLoader from "react-content-loader";
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 // Components
 const MovieCard = React.lazy(() => {
@@ -24,9 +22,6 @@ function UpComingMovieList() {
     )
       .then((res) => res.json())
       .then((res) => setUpComing(res.results));
-
-    // data-aos animation init
-    AOS.init();
   }, []);
 
   function addToWatchList(event, test) {

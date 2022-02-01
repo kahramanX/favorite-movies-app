@@ -6,7 +6,11 @@ function Banner() {
         src={require("../Assets/Images/banner.jpg")}
         alt="Banner"
       />
-      <span>
+      <span
+        data-aos="fade-up"
+        data-aos-anchor-placement="bottom-bottom"
+        data-aos-duration="1000"
+      >
         Sevdiğin filmleri listene ekle, <br />
         arkadaşlarınla paylaş
       </span>

@@ -17,7 +17,7 @@ function Header() {
 
       <div className="header-right-section">
         <div className="search-btn">
-          <Link to="/search">Filtre</Link>
+          <Link to="/filter">Filtre</Link>
         </div>
 
         <div className="favorites-btn">
