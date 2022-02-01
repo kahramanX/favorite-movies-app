@@ -2,6 +2,8 @@ import React, { useEffect, useRef, useState } from "react";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import { Suspense } from "react/cjs/react.production.min";
 import ContentLoader from "react-content-loader";
+import MoviePage from "../../MoviePage/MoviePage";
+import { Redirect, Route } from "react-router-dom/cjs/react-router-dom.min";
 
 // Components
 const MovieCard = React.lazy(() => {
@@ -11,7 +13,7 @@ const MovieCard = React.lazy(() => {
   });
 });
 
-function TopMovieList() {
+function PopularMovieList() {
   const [topMovies, setTopMovies] = useState([]);
 
   const scrollBarRef = useRef(0);
@@ -24,9 +26,12 @@ function TopMovieList() {
       .then((res) => setTopMovies(res.results));
   }, []);
 
-  function addToWatchList(event, test) {
-    console.log(test.title);
+  function addToWatchList(event) {
     successInfo(event.target);
+  }
+
+  function goToTheMoviePage(movieInfo) {
+    console.log(movieInfo);
   }
 
   function successInfo(event) {
@@ -91,6 +96,7 @@ function TopMovieList() {
                 key={index}
                 inMovie={inMovie}
                 addToWatchList={addToWatchList}
+                goToTheMoviePage={goToTheMoviePage}
               />
             );
           })}
@@ -104,4 +110,4 @@ function TopMovieList() {
   );
 }
 
-export default TopMovieList;
+export default PopularMovieList;

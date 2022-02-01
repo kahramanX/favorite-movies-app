@@ -29,10 +29,10 @@ function TopRatedMovieList() {
     AOS.init();
   }, []);
 
-  function addToWatchList(event, test) {
-    console.log(test);
+  function addToWatchList(event) {
     successInfo(event.target);
   }
+
   function successInfo(event) {
     event.innerHTML = "<i class='fas fa-plus'></i> Listeme Ekle";
     event.innerHTML = "<i class='fas fa-check-square'></i> Eklendi";
@@ -53,6 +53,10 @@ function TopRatedMovieList() {
 
   function leftScroll() {
     scrollBarRef.current.scrollLeft -= 650;
+  }
+
+  function goToTheMoviePage(movieInfo) {
+    console.log(movieInfo);
   }
 
   const MovieListLoader = () => {
@@ -93,6 +97,7 @@ function TopRatedMovieList() {
                 key={index}
                 inMovie={inMovie}
                 addToWatchList={addToWatchList}
+                goToTheMoviePage={goToTheMoviePage}
               />
             );
           })}

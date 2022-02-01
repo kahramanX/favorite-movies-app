@@ -7,7 +7,9 @@ function Footer() {
     <Router>
       <footer>
         <div className="ft-direction-container">
-          <span>Burası sıkıcı, filtreleme özelliğini kullan :)</span>
+          <span>
+            Burası sıkıcı mı? 🤔 <br /> filtreleme özelliğini kullan 👌
+          </span>
           <Link to="filter">Filtrele</Link>
         </div>
       </footer>
