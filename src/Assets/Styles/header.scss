@@ -5,7 +5,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0px 25px 20px 0px #232f3e;
+  box-shadow: 0px 0px 100px 50px #232f3e;
   z-index: 2;
   white-space: nowrap;
 
@@ -14,7 +14,7 @@ header {
   }
 
   .logo-container {
-    width: 200px;
+    width: 150px;
     a,
     img {
       width: inherit;

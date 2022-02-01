@@ -1,13 +1,12 @@
 import { Link } from "react-router-dom";
 
-function MovieCard({ inMovie, addToWatchList, goToTheMoviePage }) {
+function MovieCard({ inMovie, addToWatchList }) {
   let movieUrl = `${inMovie.id}/${inMovie.title}`;
   return (
     <div data-aos="fade-left" className="movie-card">
       <div className="card-image">
         <Link to={`/movie/${movieUrl.replace(/ /g, "-")}`}>
           <img
-            onClick={() => goToTheMoviePage(inMovie)}
             loading="lazy"
             src={`https://image.tmdb.org/t/p/original/${inMovie.poster_path}`}
             alt="movie banner"
@@ -20,7 +19,7 @@ function MovieCard({ inMovie, addToWatchList, goToTheMoviePage }) {
           <span>{inMovie.vote_average}</span>
         </div>
 
-        <button onClick={() => goToTheMoviePage(inMovie)} className="info-btn">
+        <button className="info-btn">
           <i className="fas fa-info-circle"></i>
         </button>
       </div>

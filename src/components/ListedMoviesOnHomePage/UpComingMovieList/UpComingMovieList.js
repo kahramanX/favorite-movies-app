@@ -50,10 +50,6 @@ function UpComingMovieList() {
     scrollBarRef.current.scrollLeft -= 650;
   }
 
-  function goToTheMoviePage(movieInfo) {
-    console.log(movieInfo);
-  }
-
   const MovieListLoader = () => {
     return (
       <ContentLoader
@@ -92,7 +88,6 @@ function UpComingMovieList() {
                 key={index}
                 inMovie={inMovie}
                 addToWatchList={addToWatchList}
-                goToTheMoviePage={goToTheMoviePage}
               />
             );
           })}

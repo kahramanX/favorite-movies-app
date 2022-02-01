@@ -50,10 +50,6 @@ function TopRatedMovieList() {
     scrollBarRef.current.scrollLeft -= 650;
   }
 
-  function goToTheMoviePage(movieInfo) {
-    console.log(movieInfo);
-  }
-
   const MovieListLoader = () => {
     return (
       <ContentLoader
@@ -92,7 +88,6 @@ function TopRatedMovieList() {
                 key={index}
                 inMovie={inMovie}
                 addToWatchList={addToWatchList}
-                goToTheMoviePage={goToTheMoviePage}
               />
             );
           })}

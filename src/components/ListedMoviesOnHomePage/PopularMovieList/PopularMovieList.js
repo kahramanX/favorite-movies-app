@@ -28,10 +28,6 @@ function PopularMovieList() {
     successInfo(event.target);
   }
 
-  function goToTheMoviePage(movieInfo) {
-    console.log(movieInfo);
-  }
-
   function successInfo(event) {
     event.innerHTML = "<i class='fas fa-plus'></i> Listeme Ekle";
     event.innerHTML = "<i class='fas fa-check-square'></i> Eklendi";
@@ -94,7 +90,6 @@ function PopularMovieList() {
                 key={index}
                 inMovie={inMovie}
                 addToWatchList={addToWatchList}
-                goToTheMoviePage={goToTheMoviePage}
               />
             );
           })}
