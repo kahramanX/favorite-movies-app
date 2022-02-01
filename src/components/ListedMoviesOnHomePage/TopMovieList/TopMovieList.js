@@ -7,7 +7,7 @@ import ContentLoader from "react-content-loader";
 const MovieCard = React.lazy(() => {
   // lazy loading için süre ekleniyor
   return new Promise((resolve) => {
-    setTimeout(() => resolve(import("../../MovieCard")), 500);
+    setTimeout(() => resolve(import("../MovieCard")), 500);
   });
 });
 

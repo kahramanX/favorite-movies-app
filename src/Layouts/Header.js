@@ -18,11 +18,11 @@ function Header() {
 
         <div className="header-right-section">
           <div className="search-btn">
-            <Link to="/search">Film Ara</Link>
+            <Link to="/search">Filtre</Link>
           </div>
 
           <div className="favorites-btn">
-            <Link to="watchlist">İzleme Listesi</Link>
+            <Link to="/watchlist">İzleme Listesi</Link>
           </div>
 
           <div className="user-btn">
@@ -32,7 +32,6 @@ function Header() {
           </div>
         </div>
         <Switch>
-          <Route path="/" exact></Route>
           <Route path="/watchlist"></Route>
           <Route path="/user"></Route>
         </Switch>
