@@ -19,7 +19,8 @@ function MovieCard({ inMovie, addToWatchList }) {
           <span>{inMovie.vote_average}</span>
         </div>
 
-        <button className="info-btn">
+        <button className="info-btn tooltip">
+          <span className="tooltiptext">Özet Bilgi</span>
           <i className="fas fa-info-circle"></i>
         </button>
       </div>

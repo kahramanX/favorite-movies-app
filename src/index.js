@@ -18,6 +18,7 @@ ReactDOM.render(
     <Switch>
       <Route exact path={"/"}>
         <App />
+        <Footer />
       </Route>
       <Route strict path={"/movie"}>
         <MoviePage />
@@ -26,7 +27,6 @@ ReactDOM.render(
       <Route path="/user"></Route>
       <Route path="/filter"></Route>
     </Switch>
-    <Footer />
   </Router>,
   document.getElementById("root")
 );

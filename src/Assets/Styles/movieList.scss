@@ -4,6 +4,7 @@
   border: 1px solid #2c4f79;
   padding: 0 50px 20px 50px;
   position: relative;
+  border-radius: 5px;
 
   .section-title {
     width: 280px;
@@ -70,13 +71,16 @@
     background-color: rgba(0, 169, 225, 0.4);
     transition: background-color 0.1s;
     z-index: 1;
+
     cursor: pointer;
     i {
       color: white;
     }
+
     &:active {
       background-color: rgba(0, 169, 225, 0.8);
     }
+
     @media (max-width: 600px) {
       display: none;
     }
@@ -109,6 +113,7 @@
           object-fit: contain;
           width: 100%;
           height: 300px;
+          border-radius: 5px;
         }
       }
 
