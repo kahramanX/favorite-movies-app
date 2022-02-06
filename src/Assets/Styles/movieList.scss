@@ -89,8 +89,7 @@
   .movie-list {
     display: flex;
     align-items: center;
-    overflow-x: hidden;
-    overflow-y: hidden;
+    overflow-x: auto;
     scroll-behavior: smooth;
 
     .movie-card {

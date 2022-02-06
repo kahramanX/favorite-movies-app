@@ -1,0 +1,204 @@
+.background-img {
+  height: 50vh;
+
+  img {
+    height: inherit;
+    width: 100%;
+    object-fit: cover;
+    opacity: 0.7;
+  }
+}
+
+.movie-container {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  padding: 20px;
+  transform: translate(-50%, -50%);
+  background-color: #192b41;
+  width: 70vw;
+  border-radius: 5px;
+
+  .movie-card-container {
+    display: flex;
+    flex-direction: row;
+
+    .movie-img-container {
+      width: 200px;
+
+      .watchlist-btn {
+        cursor: pointer;
+        border-radius: 5px;
+        background-color: rgba(0, 169, 225, 0.192);
+        color: rgb(0, 168, 225);
+        width: 100%;
+        padding: 10px;
+        font-size: 1em;
+
+        i {
+          margin-right: 20px;
+        }
+
+        &:hover {
+          background-color: rgba(98, 206, 241, 0.247);
+          color: rgb(66, 199, 243);
+        }
+      }
+    }
+
+    img {
+      border-radius: 5px;
+      object-fit: cover;
+      width: inherit;
+      height: auto;
+    }
+
+    .movie-infos-container {
+      width: 65%;
+      margin-left: 20px;
+      color: rgb(242 244 246 / 70%);
+
+      h2 {
+        color: white;
+      }
+
+      .movie-tagline {
+        margin-bottom: 10px;
+        span {
+          font-size: 0.8em;
+          font-style: italic;
+        }
+      }
+
+      .movie-rates {
+        div {
+          display: inline-block;
+
+          &:not(:first-child) {
+            margin-left: 20px;
+          }
+        }
+
+        i {
+          margin-right: 10px;
+        }
+
+        .vote-average {
+          .fa-star {
+            color: yellow;
+          }
+        }
+
+        .vote-count {
+          .fa-users {
+            color: white;
+          }
+        }
+
+        .release-date {
+          .fa-calendar-day {
+            color: white;
+          }
+        }
+
+        .movie-status {
+          .fa-question-circle {
+            color: white;
+          }
+        }
+      }
+
+      .movie-description {
+        margin-top: 10px;
+        font-size: 0.9em;
+      }
+
+      .movie-genres-container,
+      .spoken-languages-container {
+        height: auto;
+        margin-top: 20px;
+
+        h3 {
+          color: white;
+        }
+
+        .movie-genre,
+        .movie-lang {
+          cursor: pointer;
+          display: inline-block;
+          margin-right: 10px;
+          border-radius: 5px;
+          margin-top: 10px;
+          padding: 10px;
+          background-color: rgb(4, 108, 143);
+          border: 1px solid #90dffe;
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+// CREDITS LIST
+.credits-container {
+  height: 500px;
+  margin-top: 500px;
+
+  .credits-title {
+    margin-left: 10px;
+    display: flex;
+    border-left: 6px solid rgb(0, 168, 225);
+
+    h2 {
+      margin-left: 20px;
+      color: white;
+    }
+  }
+
+  .credits-list {
+    display: flex;
+    overflow-x: auto;
+
+    .credit {
+      padding: 10px 10px 0 10px;
+      min-width: 150px;
+      background-color: #192b41;
+      border-radius: 10px;
+      margin-left: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .credit-image {
+        margin-bottom: 10px;
+
+        img {
+          object-fit: cover;
+          border-radius: 50%;
+          width: 100px;
+          height: 100px;
+        }
+      }
+
+      .credit-infos {
+        text-align: center;
+        color: white;
+        .credit-ch {
+          margin-bottom: 20px;
+          span {
+            color: rgb(242 244 246 / 70%);
+            border-radius: 10px;
+            font-size: 0.7em;
+          }
+        }
+        .credit-name {
+          span {
+            color: rgb(242 244 246 / 70%);
+            border-radius: 10px;
+            font-size: 0.7em;
+          }
+        }
+      }
+    }
+  }
+}

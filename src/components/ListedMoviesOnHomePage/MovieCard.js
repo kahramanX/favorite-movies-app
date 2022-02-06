@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-function MovieCard({ inMovie, addToWatchList }) {
+function MovieCard({ inMovie }) {
   let movieUrl = `${inMovie.id}/${inMovie.title}`;
   return (
     <div data-aos="fade-left" className="movie-card">
@@ -29,7 +29,7 @@ function MovieCard({ inMovie, addToWatchList }) {
 
       <div className="card-buttons">
         <button
-          onClick={(event) => addToWatchList(event)}
+          //onClick={(event) => addToWatchList(event)}
           className="watchlist-btn"
         >
           <i className="fas fa-plus"></i>
