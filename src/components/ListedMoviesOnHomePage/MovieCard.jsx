@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function MovieCard({ inMovie }) {
   let movieUrl = `${inMovie.id}/${inMovie.title}`;
   return (
-    <div data-aos="fade-left" className="movie-card">
+    <div className="movie-card">
       <div className="card-image">
         <Link to={`/movie/${movieUrl.replace(/ /g, "-")}`}>
           <img

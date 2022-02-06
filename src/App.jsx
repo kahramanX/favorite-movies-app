@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 
 // Components
-import Banner from "../src/components/Banner.js";
-import AllComponentsOfMovieLists from "./components/ListedMoviesOnHomePage/AllComponentsOfMovieLists.js";
+import Banner from "./components/Banner";
+import AllComponentsOfMovieLists from "./components/ListedMoviesOnHomePage/AllComponentsOfMovieLists.jsx";
 import AOS from "aos";
 import "aos/dist/aos.css";
 

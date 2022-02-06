@@ -130,9 +130,6 @@ function MoviePage() {
         <div className="credits-title">
           <h2>Oyuncular</h2>
         </div>
-        {/* <h1>Oyuncular</h1>
-        <h1>Benzer Filmler</h1>
-        <h1>Yayıncılar(ülke seçimi gerekli)</h1> */}
         <div className="credits-list">
           <CreditsComponent movieId={cuttedLocation} />
         </div>

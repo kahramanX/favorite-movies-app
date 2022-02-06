@@ -3,6 +3,9 @@ import React, { useEffect, useState } from "react";
 // Components
 import MovieCard from "../ListedMoviesOnHomePage/MovieCard";
 
+// SASS
+import "../../Assets/Styles/movieList.scss";
+
 function SimilarMovieList({ movieId }) {
   const [similarMovie, setSimilarMovie] = useState([]);
   console.log("bu ney");

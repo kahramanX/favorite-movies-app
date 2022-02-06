@@ -5,7 +5,7 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import Footer from "./Layouts/Footer";
 import Header from "./Layouts/Header";
-import MoviePage from "../src/components/MoviePage/MoviePage.js";
+import MoviePage from "../src/components/MoviePage/MoviePage";
 
 // SASS
 import "../src/Assets/Styles/index.scss";
