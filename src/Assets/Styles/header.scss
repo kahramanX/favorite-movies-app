@@ -24,6 +24,59 @@ header {
     }
   }
 
+  .search-box-container {
+    width: 50%;
+
+    input {
+      border-radius: 5px;
+      border: 1px solid rgba(0, 169, 225);
+      padding: 10px;
+      font-size: 1em;
+      width: 100%;
+      color: white;
+      background-color: transparent;
+      transition: border 0.3s;
+
+      &:hover {
+        border: 2px solid rgba(0, 169, 225);
+      }
+
+      &:focus {
+        border: 4px solid rgba(0, 169, 225);
+      }
+
+      &:focus + .search-box {
+        height: 500px;
+        border: 1px solid rgba(0, 169, 225);
+        border-radius: 10px;
+        position: absolute;
+        background-color: #192b41;
+        overflow-x: auto;
+      }
+    }
+
+    .search-box {
+      .movie-item {
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+
+        .movie-image {
+          img {
+            border-radius: 5px;
+            width: 60px;
+          }
+        }
+
+        .movie-name {
+          color: white;
+          margin-left: 30px;
+        }
+      }
+    }
+  }
+
   .header-right-section {
     display: flex;
     justify-content: center;
