@@ -56,11 +56,16 @@ header {
     }
 
     .search-box {
+      position: absolute;
       .movie-item {
         padding: 10px;
         display: flex;
         align-items: center;
         flex-direction: row;
+        border: 1px solid rgba(0, 169, 225);
+        border-radius: 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
 
         .movie-image {
           img {
