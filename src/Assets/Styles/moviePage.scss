@@ -108,9 +108,25 @@
         }
       }
 
-      .movie-description {
-        margin-top: 10px;
-        font-size: 0.9em;
+      .movie-description-container {
+        .movie-description {
+          width: auto;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          margin-top: 10px;
+          font-size: 0.9em;
+        }
+
+        .open-desc {
+          margin-top: 10px;
+          cursor: pointer;
+          border-radius: 5px;
+          background-color: #046c8f;
+          border: 1px solid #90dffe;
+          color: white;
+          padding: 5px;
+        }
       }
 
       .movie-genres-container,

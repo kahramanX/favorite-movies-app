@@ -3,9 +3,6 @@ import { useEffect, useState } from "react";
 function CreditsComponent({ movieId }) {
   const [creditInfos, setCreditInfo] = useState();
 
-  console.log(movieId);
-  console.log(creditInfos);
-
   useEffect(() => {
     fetch(
       `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=9f2d1368e54e609b6d793560018b878a&language=tr-TR`

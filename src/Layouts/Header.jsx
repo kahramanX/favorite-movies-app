@@ -18,9 +18,6 @@ function Header() {
       .then((res) => setSearchMovie(res.results));
   }, [inputValue]);
 
-  console.log(searchMovie);
-  console.log(inputValue);
-
   return (
     <header>
       <div className="logo-container">

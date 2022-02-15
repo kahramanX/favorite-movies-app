@@ -8,8 +8,6 @@ import "../../Assets/Styles/movieList.scss";
 
 function SimilarMovieList({ movieId }) {
   const [similarMovie, setSimilarMovie] = useState([]);
-  console.log("bu ney");
-  console.log(movieId);
 
   useEffect(() => {
     fetch(
@@ -18,8 +16,6 @@ function SimilarMovieList({ movieId }) {
       .then((res) => res.json())
       .then((res) => setSimilarMovie(res.results));
   }, [movieId]);
-
-  console.log(similarMovie);
 
   return similarMovie.map((inMovie, index) => {
     return <MovieCard inMovie={inMovie} key={index} />;

@@ -46,6 +46,7 @@ header {
       }
 
       &:focus + .search-box {
+        display: block;
         height: 500px;
         border: 1px solid rgba(0, 169, 225);
         border-radius: 10px;
@@ -56,6 +57,7 @@ header {
     }
 
     .search-box {
+      display: none;
       position: absolute;
       .movie-item {
         padding: 10px;

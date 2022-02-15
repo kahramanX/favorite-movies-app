@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
 import { Suspense } from "react/cjs/react.production.min";
 import ContentLoader from "react-content-loader";
@@ -31,6 +31,8 @@ function MoviePage() {
     );
   };
 
+  const openCloseText = useRef("");
+
   useEffect(() => {
     fetch(
       `https://api.themoviedb.org/3/movie/${cuttedLocation}?api_key=9f2d1368e54e609b6d793560018b878a&language=tr-TR`
@@ -40,6 +42,22 @@ function MoviePage() {
         setMovieInfo(res);
       });
   }, [cuttedLocation]);
+
+  function clickTextToggleBtn() {
+    let descElement = openCloseText.current.nextSibling;
+
+    console.log(descElement.style.whiteSpace);
+
+    if (openCloseText.current.textContent === "Yazı aç") {
+      descElement.style.whiteSpace = "nowrap";
+      openCloseText.current.textContent = "Yazı kapat";
+      console.log("normal alanı");
+    } else if (openCloseText.current.textContent === "Yazı kapat") {
+      descElement.style.whiteSpace = "normal";
+      openCloseText.current.textContent = "Yazı aç";
+      console.log("nowrap alanı");
+    }
+  }
 
   return (
     <>
@@ -95,7 +113,16 @@ function MoviePage() {
               </div>
             </div>
 
-            <div className="movie-description">{movieInfo.overview}</div>
+            <div className="movie-description-container">
+              <button
+                onClick={() => clickTextToggleBtn()}
+                ref={openCloseText}
+                className="open-desc"
+              >
+                Yazı aç
+              </button>
+              <div className="movie-description">{movieInfo.overview}</div>
+            </div>
 
             <div className="movie-genres-container">
               <h3>Türler:</h3>
