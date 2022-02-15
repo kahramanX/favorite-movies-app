@@ -46,16 +46,12 @@ function MoviePage() {
   function clickTextToggleBtn() {
     let descElement = openCloseText.current.nextSibling;
 
-    console.log(descElement.style.whiteSpace);
-
     if (openCloseText.current.textContent === "Yazı aç") {
-      descElement.style.whiteSpace = "nowrap";
-      openCloseText.current.textContent = "Yazı kapat";
-      console.log("normal alanı");
-    } else if (openCloseText.current.textContent === "Yazı kapat") {
       descElement.style.whiteSpace = "normal";
+      openCloseText.current.textContent = "Yazı kapat";
+    } else if (openCloseText.current.textContent === "Yazı kapat") {
+      descElement.style.whiteSpace = "nowrap";
       openCloseText.current.textContent = "Yazı aç";
-      console.log("nowrap alanı");
     }
   }
 
