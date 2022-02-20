@@ -6,6 +6,7 @@ import App from "./App";
 import Footer from "./Layouts/Footer";
 import Header from "./Layouts/Header";
 import MoviePage from "../src/components/MoviePage/MoviePage";
+import FilterPage from "./components/FilterPage/Filter";
 
 // SASS
 import "../src/Assets/Styles/index.scss";
@@ -18,15 +19,17 @@ ReactDOM.render(
     <Switch>
       <Route exact path={"/"}>
         <App />
-        <Footer />
       </Route>
       <Route strict path={"/movie"}>
         <MoviePage />
       </Route>
-      <Route path="/watchlist"></Route>
-      <Route path="/user"></Route>
-      <Route path="/filter"></Route>
+      <Route strict path={"/filter"}>
+        <FilterPage />
+      </Route>
+      <Route path={"/watchlist"}></Route>
+      <Route path={"/user"}></Route>
     </Switch>
+    <Footer />
   </Router>,
   document.getElementById("root")
 );

@@ -10,7 +10,7 @@ function Footer() {
           <span>
             Burası sıkıcı mı? 🤔 <br /> filtreleme özelliğini kullan 👌
           </span>
-          <Link to="filter">Filtrele</Link>
+          <Link to="/filter">Filtrele</Link>
         </div>
       </footer>
     </Router>

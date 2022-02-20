@@ -1,0 +1,67 @@
+.filter-section-container {
+  color: white;
+  margin-top: 100px;
+  display: flex;
+  align-items: center;
+  margin-left: 50px;
+  border: 1px solid red;
+  height: 70px;
+
+  .movie-and-tvshow {
+    margin-right: 20px;
+
+    .selected-show {
+      border-bottom: 4px solid rgba(0, 169, 225);
+    }
+
+    span {
+      padding: 5px;
+      font-size: 1.2em;
+
+      &:last-child {
+        margin-left: 10px;
+      }
+    }
+  }
+
+  .filter-container {
+    display: flex;
+
+    .filter-option {
+      position: relative;
+      color: #abadaf;
+      cursor: pointer;
+      padding: 5px;
+      border-radius: 5px;
+      margin-right: 15px;
+      background-color: #415369;
+
+      i {
+        margin-left: 10px;
+      }
+
+      .filter-modal {
+        z-index: 2;
+        display: none;
+        position: absolute;
+        top: 150%;
+        left: 0;
+        border: 1px solid red;
+        background-color: #415369;
+
+        input {
+          border: 1px solid rgba(0, 169, 225);
+        }
+      }
+    }
+
+    .selected-filter {
+      color: white;
+      border: 1px solid rgba(0, 169, 225);
+
+      i {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
