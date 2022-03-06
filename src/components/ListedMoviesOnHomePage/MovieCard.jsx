@@ -5,7 +5,9 @@ function MovieCard({ inMovie }) {
   return (
     <div className="movie-card">
       <div className="card-image">
-        <Link to={`/movie/${movieUrl.replace(/ /g, "-")}`}>
+        <Link
+          to={`/movie/${movieUrl.replace(/ /g, "-").replace(/%/g, "percent")}`}
+        >
           <img
             loading="lazy"
             src={`https://image.tmdb.org/t/p/original/${inMovie.poster_path}`}
