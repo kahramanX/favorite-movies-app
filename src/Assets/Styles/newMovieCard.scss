@@ -1,0 +1,80 @@
+.filtered-movie-section {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+
+  .movie-card {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+    cursor: pointer;
+    margin: 10px;
+
+    .card-image {
+      img {
+        object-fit: contain;
+        width: 100%;
+        border-radius: 5px;
+      }
+    }
+  }
+
+  .movie-infos {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+
+    .movie-rates {
+      span {
+        color: rgb(242 244 246 / 70%);
+        margin-left: 10px;
+      }
+
+      i {
+        color: #f5c518;
+      }
+    }
+
+    .info-btn {
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: rgba(0, 169, 225, 0.1);
+      border: 1px solid rgb(0, 168, 225);
+
+      .fa-info-circle {
+        font-size: 2em;
+        color: rgb(0, 168, 225);
+      }
+    }
+  }
+
+  .movie-name {
+    padding: 0 0 5px 0;
+    text-align: center;
+    color: rgb(242 244 246 / 70%);
+  }
+
+  .card-buttons {
+    .watchlist-btn {
+      cursor: pointer;
+      border-radius: 5px;
+      background-color: rgba(0, 169, 225, 0.192);
+      color: rgb(0, 168, 225);
+      width: 100%;
+      padding: 10px;
+      font-size: 1em;
+
+      i {
+        margin-right: 20px;
+      }
+
+      &:hover {
+        background-color: rgba(98, 206, 241, 0.247);
+        color: rgb(66, 199, 243);
+      }
+    }
+  }
+}

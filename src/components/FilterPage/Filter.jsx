@@ -1,6 +1,10 @@
 // SASS
 import { useEffect, useState } from "react";
 import "../../Assets/Styles/filterPage.scss";
+import "../../Assets/Styles/newMovieCard.scss";
+
+// Components
+import MovieCard from "../ListedMoviesOnHomePage/MovieCard";
 
 function Filter() {
   const [movieGenres, setMovieGenres] = useState([]);
@@ -14,7 +18,7 @@ function Filter() {
   // movie sort
   const [sortMovie, setSortMovie] = useState("");
   // get movie from filter
-  const [movieFilterAPI, setMovieFilterAPI] = useState("");
+  const [movieFilterAPI, setMovieFilterAPI] = useState([]);
 
   // for film genres
   useEffect(() => {
@@ -28,17 +32,15 @@ function Filter() {
   }, []);
 
   // for film filter
-  // https://api.themoviedb.org/3/discover/movie?api_key=9f2d1368e54e609b6d793560018b878a&language=tr-TR&sort_by=popularity.asc&include_adult=false&include_video=false&page=1&release_date.gte=2015&release_date.lte=2020&with_watch_monetization_types=flatrate
-
   useEffect(() => {
     fetch(
-      `https://api.themoviedb.org/3/discover/movie?api_key=9f2d1368e54e609b6d793560018b878a&language=tr-TR&sort_by=${sortMovie}&include_adult=false&include_video=false&page=1&with_genres=${movieGenres}&release_date.gte=${minReleaseYear}&release_date.lte=${maxReleaseYear}&with_watch_monetization_types=flatrate`
+      `https://api.themoviedb.org/3/discover/movie?api_key=9f2d1368e54e609b6d793560018b878a&language=tr-TR&sort_by=${sortMovie}&include_adult=false&include_video=false&page=1&with_genres=${selectMovieGenre.toString()}&release_date.gte=${minReleaseYear}&release_date.lte=${maxReleaseYear}&with_watch_monetization_types=flatrate`
     )
       .then((res) => res.json())
       .then((res) => {
-        setMovieFilterAPI(res);
+        setMovieFilterAPI(res.results);
       });
-  }, [maxReleaseYear, minReleaseYear, sortMovie, movieGenres]);
+  }, [maxReleaseYear, minReleaseYear, sortMovie, selectMovieGenre]);
 
   function addGenreToFetch(element) {
     let genreId = element.dataset.genreId;
@@ -71,102 +73,109 @@ function Filter() {
     }
   }
 
-  console.log(movieFilterAPI);
   return (
-    <div className="filter-section-container">
-      <div className="movie-and-tvshow">
-        <span className="selected-show">Filmler</span>
-        <span>Diziler</span>
-      </div>
-
-      <div className="filter-container">
-        <div
-          onClick={(e) => {
-            clickedFilterOption(e.target);
-          }}
-          className="filter-option"
-        >
-          Yayın Yılı
-          <i className="fas fa-angle-down"></i>
-          <div className="filter-modal">
-            Min:
-            <input
-              className="min-year"
-              type="number"
-              min="0"
-              max="2030"
-              placeholder="Min year"
-              onChange={(e) => setMinReleaseYear(e.target.value)}
-            />
-            Max:
-            <input
-              className="max-year"
-              type="number"
-              min="0"
-              max="2030"
-              placeholder="Max year"
-              onChange={(e) => setMaxReleaseYear(e.target.value)}
-            />
-          </div>
+    <>
+      <div className="filter-section-container">
+        <div className="movie-and-tvshow">
+          <span className="selected-show">Filmler</span>
+          <span>Diziler</span>
         </div>
 
-        <div
-          onClick={(e) => {
-            clickedFilterOption(e.target);
-          }}
-          className=" filter-option"
-        >
-          Türler
-          <i className="fas fa-angle-down"></i>
-          <div className="filter-modal">
-            <div className="filter-content">
-              {movieGenres.map((genre, index) => {
-                return (
-                  <div
-                    data-genre-id={genre.id}
-                    key={index}
-                    className="genre-option"
-                    onClick={(e) => addGenreToFetch(e.target)}
-                  >
-                    {genre.name}
-                  </div>
-                );
-              })}
+        <div className="filter-container">
+          <div
+            onClick={(e) => {
+              clickedFilterOption(e.target);
+            }}
+            className="filter-option"
+          >
+            Yayın Yılı
+            <i className="fas fa-angle-down"></i>
+            <div className="filter-modal">
+              Min:
+              <input
+                className="min-year"
+                type="number"
+                min="0"
+                max="2030"
+                placeholder="Min year"
+                onChange={(e) => setMinReleaseYear(e.target.value)}
+              />
+              Max:
+              <input
+                className="max-year"
+                type="number"
+                min="0"
+                max="2030"
+                placeholder="Max year"
+                onChange={(e) => setMaxReleaseYear(e.target.value)}
+              />
+            </div>
+          </div>
+
+          <div
+            onClick={(e) => {
+              clickedFilterOption(e.target);
+            }}
+            className=" filter-option"
+          >
+            Türler
+            <i className="fas fa-angle-down"></i>
+            <div className="filter-modal">
+              <div className="filter-content">
+                {movieGenres.map((genre, index) => {
+                  return (
+                    <div
+                      data-genre-id={genre.id}
+                      key={index}
+                      className="genre-option"
+                      onClick={(e) => addGenreToFetch(e.target)}
+                    >
+                      {genre.name}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+
+          <div
+            onClick={(e) => {
+              clickedFilterOption(e.target);
+            }}
+            className=" filter-option"
+          >
+            Sıralama
+            <i className="fas fa-angle-down"></i>
+            <div className="filter-modal">
+              <div className="filter-content">
+                <select
+                  onChange={(e) => setSortMovie(e.target.value)}
+                  defaultValue={"Seç"}
+                >
+                  <option disabled defaultValue={"Seç"}>
+                    Seç
+                  </option>
+                  <option value={"popularity.asc"}>Popularite azalan</option>
+                  <option value={"popularity.desc"}>Popularite artan</option>
+                  <option value={"release_date.asc"}>
+                    Yayınlanma tarihi artan
+                  </option>
+                  <option value={"release_date.desc"}>
+                    Yayınlanma tarihi azalan
+                  </option>
+                </select>
+              </div>
             </div>
           </div>
         </div>
-
-        <div
-          onClick={(e) => {
-            clickedFilterOption(e.target);
-          }}
-          className=" filter-option"
-        >
-          Sıralama
-          <i className="fas fa-angle-down"></i>
-          <div className="filter-modal">
-            <div className="filter-content">
-              <select
-                onChange={(e) => setSortMovie(e.target.value)}
-                defaultValue={"Seç"}
-              >
-                <option disabled defaultValue={"Seç"}>
-                  Seç
-                </option>
-                <option value={"popularity.asc"}>Popularite artan</option>
-                <option value={"popularity.desc"}>Popularite azalan</option>
-                <option value={"release_date.asc"}>
-                  Yayınlanma tarihi artan
-                </option>
-                <option value={"release_date.desc"}>
-                  Yayınlanma tarihi azalan
-                </option>
-              </select>
-            </div>
-          </div>
-        </div>
       </div>
-    </div>
+
+      <section className="filtered-movie-section">
+        {movieFilterAPI.map((movie, index) => {
+          return <MovieCard key={index} inMovie={movie} />;
+        })}
+      </section>
+    </>
   );
 }
 
